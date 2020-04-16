@@ -52,12 +52,12 @@ function title ()
     export PROMPT_COMMAND='echo -ne "\033]0;$TITLE\007"'
 }
 
-function memo ()
+function vimmemo ()
 {
-  vim /Users/tomohiro.b.sasaki/memo/$(date '+%Y%m%d')
+  vim /Users/tomohiro.b.sasaki/memo/$(date '+%Y%m')
 }
 
 function catmemo ()
 {
-  cat /Users/tomohiro.b.sasaki/memo/$(date '+%Y%m%d')
+  cat /Users/tomohiro.b.sasaki/memo/$(date '+%Y%m')
 }
