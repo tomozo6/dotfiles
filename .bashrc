@@ -25,7 +25,8 @@ eval "$(direnv hook bash)"
 
 #alias ave='aws-vault exec --session-ttl=1h --assume-role-ttl=1h'
 alias ave='aws-vault exec'
-alias ac='aws-vault exec cokeon --'
+alias a='aws-vault exec cokeon --'
+alias p='aws-vault exec pentel --'
 
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
@@ -45,6 +46,14 @@ alias k='aws-vault exec cokeon -- kubectl'
 # Helm
 alias h='aws-vault exec cokeon -- helm'
 
+# argocd
+alias argocd='aws-vault exec cokeon -- kubectl port-forward svc/argocd-server -n argocd 8080:443'
+
+# git add
+alias ga='git add -A && git commit -m commit && a git push origin master'
+
+alias ql='qlmanage -p "$@" >& /dev/null'
+
 # iterm
 function title ()
 {
@@ -52,7 +61,7 @@ function title ()
     export PROMPT_COMMAND='echo -ne "\033]0;$TITLE\007"'
 }
 
-function vimmemo ()
+function memo ()
 {
   vim /Users/tomohiro.b.sasaki/memo/$(date '+%Y%m')
 }

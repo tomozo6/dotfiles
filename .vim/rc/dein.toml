@@ -22,8 +22,17 @@ hook_post_update = '''
 repo    = 'vim-airline/vim-airline'
 depends = ['vim-airline-themes']
 
-#Terraformのシンタックスハイライト
+# Terraformのシンタックスハイライト
+[[plugins]]
 repo = 'hashivim/vim-terraform'
+
+# Kubernetesのシンタックスハイライト
+[[plugins]]
+repo = 'andrewstuart/vim-kubernetes'
+
+# Helmのシンタックスハイライト
+[[plugins]]
+repo = 'towolf/vim-helm'
 
 #ステータスラインのテーマ
 [[plugins]]
@@ -124,6 +133,11 @@ repo = 'haya14busa/vim-operator-flashy'
 repo = 'mattn/emmet-vim'# 基本は github.com のレポジトリーを指定するだけ
 [[plugins]]
 repo = 'Shougo/dein.vim'
+
+# flake8-vim
+# pip install frosted
+[[plugins]]
+repo = 'andviro/flake8-vim'
 
 # git clone 後、実行すべきコマンドがある場合はこんな感じ
 [[plugins]]
