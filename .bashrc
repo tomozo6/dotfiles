@@ -50,7 +50,8 @@ alias h='aws-vault exec cokeon -- helm'
 alias argocd='aws-vault exec cokeon -- kubectl port-forward svc/argocd-server -n argocd 8080:443'
 
 # git add
-alias ga='git add -A && git commit -m commit && a git push origin master'
+alias ga='git add -A && git commit -m commit && git push origin master'
+alias gaa='git add -A && git commit -m commit && a git push origin master'
 
 alias ql='qlmanage -p "$@" >& /dev/null'
 
