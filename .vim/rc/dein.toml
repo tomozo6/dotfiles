@@ -125,8 +125,8 @@ repo = 'rhysd/clever-f.vim'
 repo = 'kana/vim-operator-user'
 
 #コピーしたところが一瞬ハイライトされる 入らなかった
-[[plugins]]
-repo = 'haya14busa/vim-operator-flashy'
+#[[plugins]]
+#repo = 'haya14busa/vim-operator-flashy'
 
 #html補完
 [[plugins]]
@@ -136,8 +136,8 @@ repo = 'Shougo/dein.vim'
 
 # flake8-vim
 # pip install frosted
-[[plugins]]
-repo = 'andviro/flake8-vim'
+#[[plugins]]
+#repo = 'andviro/flake8-vim'
 
 # git clone 後、実行すべきコマンドがある場合はこんな感じ
 [[plugins]]
