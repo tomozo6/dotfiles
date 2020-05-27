@@ -10,7 +10,8 @@ fi
 source /usr/local/etc/bash_completion.d/git-prompt.sh
 source /usr/local/etc/bash_completion.d/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
-export PS1='\[\033[37m\][\[\033[36m\]\u\[\033[37m\]@\h \[\033[32m\]\W\[\033[37m\]]\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+#export PS1='\[\033[37m\][\[\033[36m\]\u\[\033[37m\]@\h \[\033[32m\]\W\[\033[37m\]]\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+export PS1='\[\033[32m\]\W\[\033[37m\]\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
 # direnv
 eval "$(direnv hook bash)"
@@ -42,6 +43,11 @@ export TF_CLI_ARGS_destroy="--parallelism=30"
 
 # Kubernetes
 alias k='aws-vault exec cokeon -- kubectl'
+
+# kube-ps1
+# brew install kube-ps1
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+PS1='$(kube_ps1)'$PS1
 
 # Helm
 alias h='aws-vault exec cokeon -- helm'
