@@ -22,3 +22,5 @@ export PYENV_ROOT=/usr/local/var/pyenv
 # pyenvさんに自動補完機能を提供してもらう
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+export PATH=$HOME/.nodebrew/current/bin:$PATH

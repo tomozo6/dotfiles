@@ -23,6 +23,7 @@ eval "$(direnv hook bash)"
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
 
+AWS_ASSUME_ROLE_TTL=1h
 
 #alias ave='aws-vault exec --session-ttl=1h --assume-role-ttl=1h'
 alias ave='aws-vault exec'
@@ -41,8 +42,14 @@ export TF_CLI_ARGS_plan="--parallelism=30"
 export TF_CLI_ARGS_apply="--parallelism=30"
 export TF_CLI_ARGS_destroy="--parallelism=30"
 
+# -----------------------------------------------------------------------------
 # Kubernetes
+# -----------------------------------------------------------------------------
+# kubectl
 alias k='aws-vault exec cokeon -- kubectl'
+
+# kubens
+alias kns='aws-vault exec cokeon -- kubens'
 
 # kube-ps1
 # brew install kube-ps1
@@ -52,14 +59,15 @@ PS1='$(kube_ps1)'$PS1
 # Helm
 alias h='aws-vault exec cokeon -- helm'
 
-# argocd
-alias argocd='aws-vault exec cokeon -- kubectl port-forward svc/argocd-server -n argocd 8080:443'
-
 # git add
 alias ga='git add -A && git commit -m commit && git push origin master'
 alias gaa='git add -A && git commit -m commit && a git push origin master'
 
 alias ql='qlmanage -p "$@" >& /dev/null'
+
+
+# Change Directory
+alias ct='cd /Users/tomohiro.b.sasaki/code/codecommit/cokeon/IaC/terraform/'
 
 # iterm
 function title ()
@@ -77,3 +85,5 @@ function catmemo ()
 {
   cat /Users/tomohiro.b.sasaki/memo/$(date '+%Y%m')
 }
+
+alias argo='aws-vault exec cokeon -- kubectl port-forward svc/argocd-server -n argocd 8888:443'
