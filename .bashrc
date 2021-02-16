@@ -23,12 +23,16 @@ eval "$(direnv hook bash)"
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
 
-AWS_ASSUME_ROLE_TTL=1h
+# aws-vault
+export AWS_VAULT_PASS_PREFIX=aws-vault
+export AWS_ASSUME_ROLE_TTL=1h
+export AWS_SESSION_TOKEN_TTL=1h
 
 #alias ave='aws-vault exec --session-ttl=1h --assume-role-ttl=1h'
-alias ave='aws-vault exec'
-alias a='aws-vault exec cokeon --'
-alias p='aws-vault exec pentel --'
+#alias ave='aws-vault exec'
+#alias a='aws-vault exec cokeon --'
+#alias p='aws-vault exec pentel --'
+#alias i='aws-vault exec itoen --'
 
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
@@ -46,10 +50,11 @@ export TF_CLI_ARGS_destroy="--parallelism=30"
 # Kubernetes
 # -----------------------------------------------------------------------------
 # kubectl
-alias k='aws-vault exec cokeon -- kubectl'
+#alias k='aws-vault exec cokeon -- kubectl'
+alias k='kubectl'
 
 # kubens
-alias kns='aws-vault exec cokeon -- kubens'
+#alias kns='aws-vault exec cokeon -- kubens'
 
 # kube-ps1
 # brew install kube-ps1
@@ -57,7 +62,7 @@ source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
 
 # Helm
-alias h='aws-vault exec cokeon -- helm'
+#alias h='aws-vault exec cokeon -- helm'
 
 # git add
 alias ga='git add -A && git commit -m commit && git push origin master'
@@ -67,7 +72,7 @@ alias ql='qlmanage -p "$@" >& /dev/null'
 
 
 # Change Directory
-alias ct='cd /Users/tomohiro.b.sasaki/code/codecommit/cokeon/IaC/terraform/'
+#alias ct='cd /Users/tomohiro.b.sasaki/code/codecommit/cokeon/IaC/terraform/'
 
 # iterm
 function title ()
