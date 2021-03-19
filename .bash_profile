@@ -2,13 +2,10 @@ if [ -f ~/.bashrc ] ; then
 . ~/.bashrc
 fi
 
-#export PYENV_ROOT=${HOME}/.pyenv
-#if [ -d "${PYENV_ROOT}" ]; then
-#    export PATH=${PYENV_ROOT}/bin:$PATH
-#    eval "$(pyenv init -)"
-#fi
 
-#Neovim
+# -------------------------------------------------------------------------
+# NeoVim
+# -------------------------------------------------------------------------
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/gettext/lib"
 export CPPFLAGS="-I/usr/local/opt/gettext/include"
@@ -24,3 +21,14 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# -------------------------------------------------------------------------
+# Golang
+# -------------------------------------------------------------------------
+# GoEnv
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+
+# Goコマンドのパス
+export PATH="$GOROOT/bin:$PATH"
