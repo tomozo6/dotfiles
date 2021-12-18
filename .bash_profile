@@ -32,3 +32,4 @@ eval "$(goenv init -)"
 
 # Goコマンドのパス
 export PATH="$GOROOT/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"

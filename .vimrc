@@ -121,3 +121,15 @@ endif
 "色を付ける
 syntax on
 colorscheme molokai
+
+" 削除キーでyankしない
+vnoremap d "_d
+nnoremap d "_d
+vnoremap D "_D
+nnoremap D "_D
+vnoremap x "_x
+nnoremap x "_x
+vnoremap s "_s
+nnoremap s "_s
+vnoremap C "_C
+nnoremap C "_C
