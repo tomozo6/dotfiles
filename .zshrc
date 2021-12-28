@@ -1,7 +1,6 @@
 export LANG=ja_JP.UTF-8
 setopt print_eight_bit
 
-
 # git-promptの読み込み
 source ~/.zsh/git-prompt.sh
 
@@ -18,11 +17,12 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
 # kubec-ps1
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-#PS1='$(kube_ps1)'$PS1
+#source /path/to/kube-ps1.sh
+#PROMPT='$(kube_ps1)'$PROMPT
 
 # プロンプトの表示設定(好きなようにカスタマイズ可)
-setopt PROMPT_SUBST ; PS1='$(kube_ps1) %F{green}%n: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
+#setopt PROMPT_SUBST ; PS1='$(kube-ps1) %F{green}%n: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
+setopt PROMPT_SUBST ; PS1='%F{green}%n: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
 \$ '
 
 # -----------------------------------------------------------------------------
@@ -71,13 +71,16 @@ alias k='kubectl'
 alias argo='aws-vault exec cokeon -- kubectl port-forward svc/argocd-server -n argocd 8888:443'
 
 # -----------------------------------------------------------------------------
-# Goenv
+# Go Env
 # -----------------------------------------------------------------------------
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$PATH
+#export GOPATH=$HOME/go
+#export PATH=$GOPATH/bin:$PATH
+#
+#export GOENV_ROOT=$HOME/.goenv
+#export PATH=$GOENV_ROOT/bin:$PATH
+#export PATH=$HOME/.goenv/bin:$PATH
+#eval "$(goenv init -)"
+#export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
-export GOENV_ROOT=$HOME/.goenv
-export PATH=$GOENV_ROOT/bin:$PATH
-export PATH=$HOME/.goenv/bin:$PATH
-eval "$(goenv init -)"
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

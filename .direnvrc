@@ -3,8 +3,6 @@ use_aws_profile(){
   export $(aws-vault exec $profile_name -- env | grep AWS_ | grep -v AWS_VAULT)
 }
 
-
-
 # [参考URL](https://qiita.com/minamijoyo/items/89cdb1db803c5d7a656f)
 # 読み込みたいディレクトリに以下のような .envrc を作成します。
 # 例えばAWSのプロファイル名がdevの場合は、以下のように設定すればOKです。
